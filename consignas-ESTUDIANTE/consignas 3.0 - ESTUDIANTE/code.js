@@ -66,14 +66,14 @@ function recorrerListadoYRenderizarTarjetas() {
     let lenguaje1 = document.createElement("p");
     let bimestre1 = document.createElement("p");
 
-    let nodo1 = document.createTextNode(tarjetaContenedora.lenguajes);
-    let nodo2 = document.createTextNode(tarjetaContenedora.bimestre);
+    let nodo1 = document.createTextNode(materias.lenguajes);
+    let nodo2 = document.createTextNode(materias.bimestre);
 
     container.setAttribute("class", "caja");
-    imagen.setAttribute("src", tarjetaContenedora.imgUrl);
-    imagen.setAttribute("alt", tarjetaContenedora.lenguajes);
-    lenguaje1.setAttribute("class", tarjetaContenedora.lenguajes);
-    bimestre1.setAttribute("class", tarjetaContenedora.bimestre);
+    imagen.setAttribute("src", materias.imgUrl);
+    imagen.setAttribute("alt", materias.lenguajes);
+    lenguaje1.setAttribute("class", "lenguajes");
+    bimestre1.setAttribute("class", "bimestre");
 
     lenguaje1.appendChild(nodo1);
     bimestre1.appendChild(nodo2);
@@ -82,15 +82,19 @@ function recorrerListadoYRenderizarTarjetas() {
     container.appendChild(bimestre1);
     tarjetaContenedora.appendChild(container);
   }
+  materiasBtn.removeEventListener("click", recorrerListadoYRenderizarTarjetas);
 }
 
 function alternarColorTema() {
   /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
-  
-  
+let alternarTema = document.getElementById("cambiar-tema");
+let sitio = document.getElementById("sitio");
 
-
+alternarTema.addEventListener("click", function(){
+  sitio.classList.toggle("dark");
+})
 }
 
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
-
+let teclaF = document.querySelector("#sobre-mi");
+window.addEventListener("keypress", (e) => e.key == "f" || e.key == "F" ? teclaF.classList.remove("oculto") : "");
