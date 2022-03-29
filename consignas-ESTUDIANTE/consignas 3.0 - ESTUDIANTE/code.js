@@ -98,3 +98,5 @@ alternarTema.addEventListener("click", function(){
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
 let teclaF = document.querySelector("#sobre-mi");
 window.addEventListener("keypress", (e) => e.key == "f" || e.key == "F" ? teclaF.classList.remove("oculto") : "");
+
+// japsodjpaosjdpajsd
